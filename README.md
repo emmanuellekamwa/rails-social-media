@@ -1,4 +1,4 @@
-# aScaffold for social media app with Ruby on Rails
+# A Scaffold for social media app with Ruby on Rails
 
 > This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
 
@@ -6,10 +6,6 @@
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
-
-## Live Demo
-
-TBA
 
 
 ## Getting Started
@@ -65,13 +61,13 @@ Open `http://localhost:3000/` in your browser.
 
 > Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
-### Deployment
-
-TBA
-
 ## Authors
 
-TBA
+**Emmanuelle Kamwa**
+
+- Github: [@emmanuellekamwa](https://github.com/emmanuellekamwa)
+- Twitter: [@AlixKamwa](https://twitter.com/AlixKamwa)
+- Linkedin: [@emmanuelle-kamwa-86145a1a4](https://www.linkedin.com/in/emmanuelle-kamwa-86145a1a4)
 
 ## 🤝 Contributing
 
@@ -85,9 +81,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- Hat tip to anyone whose code was used
+- Inspiration
 
 ## 📝 License
 
-TBA
+This project is [Microverse](https://www.microverse.org) licensed
 

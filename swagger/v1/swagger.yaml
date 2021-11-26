@@ -1,0 +1,173 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/posts/{post_id}/comments?auth_token={auth_token}":
+    parameters:
+    - name: post_id
+      in: path
+      description: post_id
+      required: true
+      schema:
+        type: integer
+    - name: auth_token
+      in: path
+      description: auth_token
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Retrieves all comments for a post
+      tags:
+      - Comments
+      responses:
+        '200':
+          description: Comments retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    content:
+                      type: string
+                    user_id:
+                      type: integer
+                    post_id:
+                      type: integer
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+    post:
+      summary: Creates a comment
+      tags:
+      - Comments
+      parameters: []
+      responses:
+        '200':
+          description: comment created
+        '400':
+          description: comment not created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: This is a comment
+              required:
+              - content
+  "/api/v1/posts?auth_token={auth_token}":
+    post:
+      summary: Creates a post
+      tags:
+      - Posts
+      parameters:
+      - name: auth_token
+        in: path
+        description: auth_token
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: post created
+        '422':
+          description: post not created
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                content:
+                  type: string
+                  example: This is a comment
+              required:
+              - content
+    get:
+      summary: Retrieves all posts
+      tags:
+      - Posts
+      parameters:
+      - name: auth_token
+        in: path
+        description: auth_token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: posts retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    comment:
+                      type: string
+                    user_id:
+                      type: integer
+                    post_id:
+                      type: integer
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+  "/api/v1/posts/{id}?auth_token={auth_token}":
+    get:
+      summary: Retrieves a post
+      tags:
+      - Posts
+      parameters:
+      - name: id
+        in: path
+        description: id
+        required: true
+        schema:
+          type: integer
+      - name: auth_token
+        in: path
+        description: auth_token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: post found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  user_id:
+                    type: integer
+                  content:
+                    type: string
+                  created_at:
+                    type: string
+                  updated_at:
+                    type: string
+                required:
+                - id
+        '404':
+          description: post not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
