@@ -1,7 +1,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/comments', type: :request do
-  path '/api/v1/posts/{post_id}/comments?auth_token={auth_token}' do
+  path '/api/v1/posts/{post_id}/comments? auth_token={auth_token}' do
     parameter name: 'post_id', in: :path, type: :integer, description: 'post_id'
     parameter name: 'auth_token', in: :path, type: :string, description: 'auth_token'
 

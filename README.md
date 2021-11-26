@@ -63,7 +63,7 @@ Open `http://localhost:3000/` in your browser.
 
 ## Authors
 
-** Emmanuelle Kamwa **
+**Emmanuelle Kamwa**
 
 - Github: [@emmanuellekamwa](https://github.com/emmanuellekamwa)
 - Twitter: [@AlixKamwa](https://twitter.com/AlixKamwa)
